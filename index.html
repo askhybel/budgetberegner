@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital budgetformidling – online seminar | Adapt</title>
+<meta name="description" content="Online seminar 1. december 2027 kl. 10:00–11:30: Se hvordan Adapt og Boligkontoret Danmark har gjort boligbudgetter gennemskuelige med en digital budgetportal.">
+<meta property="og:title" content="Digital budgetformidling – fra tunge PDF'er til gennemskuelige digitale universer">
+<meta property="og:description" content="Gratis online seminar 1. december 2027 kl. 10:00–11:30.">
+<meta property="og:image" content="images/portal-intro.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1b1b1b; --dark:#1a1a1a; --cream:#fbfaf3; --orange:#c2552e;
+    --muted:#5b5b5b; --line:#e4e1d6;
+    --wrap:1248px; --pad:clamp(20px,6.6vw,96px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.5 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:calc(var(--wrap) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+  .display{font-family:Syne,"Inter Tight",sans-serif;font-weight:500;letter-spacing:-.01em;line-height:1.12;margin:0}
+
+  /* Header */
+  .dark{background:var(--dark);color:var(--cream)}
+  header.site{display:flex;align-items:center;padding:24px 0 8px}
+  header.site .logo svg{height:40px;width:auto;color:var(--cream)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff !important;text-decoration:none;border:0;border-radius:999px;padding:12px 22px;font:500 16px/1 "Inter Tight",sans-serif;cursor:pointer;transition:background .2s,transform .2s}
+  .cta:hover{background:#a8461f;transform:translateY(-1px)}
+  .cta svg{width:16px;height:16px}
+
+  /* Hero */
+
+  /* Banner */
+  .banner{position:relative;overflow:hidden;aspect-ratio:1248/600;border-radius:4px;margin-top:clamp(16px,2vw,32px);background:#c86a50 url(images/hero-gradient.jpg) center/cover}
+  .banner .title{position:absolute;left:6%;top:50%;transform:translateY(-50%);width:38%;color:var(--cream);z-index:2}
+  .banner .title span{display:block;margin-bottom:16px;font:500 clamp(12px,1.1vw,14px)/1 "Inter Tight",sans-serif;letter-spacing:.14em;text-transform:uppercase}
+  .banner .title h1{font-size:clamp(34px,4.2vw,60px);font-weight:600;line-height:1.05}
+  .banner .title p{margin:20px 0 0;font-size:clamp(15px,1.3vw,18px);font-weight:500;line-height:1.45;max-width:34ch}
+  .banner .shot{position:absolute;right:4%;bottom:-22%;width:50%;border-radius:14px;box-shadow:0 30px 80px rgba(40,10,0,.35);transform:rotate(-2deg);overflow:hidden}
+  .banner .shot.back{right:33%;bottom:-62%;width:36%;transform:rotate(3deg);opacity:.95}
+  @media(max-width:860px){.banner{aspect-ratio:auto;height:auto;padding:40px 24px 0}.banner .title{position:static;transform:none;width:auto}.banner .shot{position:relative;right:auto;bottom:auto;width:100%;margin:36px 0 -40px;transform:rotate(-2deg)}.banner{padding-bottom:0;overflow:hidden}.sticky-cta{font-size:16px;padding:15px 22px}}
+
+  .dateband{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:clamp(40px,5vw,72px) 0 clamp(56px,7vw,96px)}
+  .dateband h2{font-size:clamp(30px,3vw,42px)}
+  .dateband .meta{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+  .dateband .meta li{display:flex;gap:14px;align-items:center;font-size:18px}
+  .dateband .meta svg{width:20px;height:20px;color:var(--orange);flex:none}
+  .dateband p{margin:0 0 28px;font-size:17px;line-height:1.5;text-indent:64px;color:#e9e6da}
+  @media(max-width:860px){.dateband{grid-template-columns:1fr}.dateband p{text-indent:0}}
+
+  /* Content sections */
+  section.block{padding:clamp(64px,8vw,120px) 0}
+  .two{display:grid;grid-template-columns:5fr 7fr;gap:48px}
+  .two h2{font-size:clamp(30px,3vw,42px);max-width:13ch}
+  .body{font-size:17px;line-height:1.55}
+  .body p{margin:0 0 18px}
+  .body p.lead{text-indent:64px}
+  .body h3{font:500 clamp(24px,2.2vw,30px)/1.2 Syne,sans-serif;margin:8px 0 22px}
+  @media(max-width:860px){.two{grid-template-columns:1fr;gap:24px}.body p.lead{text-indent:0}}
+
+  .people{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .person{border-top:1px solid var(--line);padding-top:14px}
+  .person b{display:block;font-weight:600}
+  .person span{color:var(--muted);font-size:15px}
+
+  ol.steps{list-style:none;padding:0;margin:8px 0 0;counter-reset:s}
+  ol.steps>li{counter-increment:s;display:grid;grid-template-columns:42px 1fr;gap:6px;padding:0 0 26px}
+  ol.steps>li::before{content:counter(s,decimal-leading-zero);color:var(--orange);font-weight:600;font-size:17px;line-height:1.55}
+  ol.steps b{font-weight:600}
+  ol.steps ul{margin:6px 0 0;padding:0;list-style:none}
+  ol.steps ul li{position:relative;padding-left:20px;margin:4px 0;color:#333}
+  ol.steps ul li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
+
+  ul.diamonds{list-style:none;padding:0;margin:26px 0}
+  ul.diamonds li{position:relative;padding-left:48px;margin:0 0 22px;font-size:17px}
+  ul.diamonds li::before{content:"";position:absolute;left:14px;top:.35em;width:12px;height:12px;background:var(--orange);transform:rotate(45deg)}
+
+
+  .free{display:inline-block;margin-top:6px;padding:10px 16px;border:1px solid var(--orange);color:var(--orange);border-radius:999px;font-weight:500}
+
+  /* Form */
+  .signup{background:var(--dark);color:var(--cream)}
+  .signup .two h2{max-width:12ch}
+  .signup .when{margin-top:28px;color:#cfcbbd;font-size:17px;line-height:1.6}
+  .signup .when strong{color:var(--cream);font-weight:500}
+  form.reg{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+  form.reg .full{grid-column:1/-1}
+  form.reg label{display:block;font-size:14px;color:#cfcbbd;margin-bottom:8px}
+  form.reg input{width:100%;background:transparent;border:0;border-bottom:1px solid #5a5a55;color:var(--cream);font:400 19px/1.3 "Inter Tight",sans-serif;padding:10px 0 12px;outline:none;transition:border-color .2s}
+  form.reg input:focus{border-color:var(--orange)}
+  form.reg input:user-invalid{border-color:#e07a5a}
+  form.reg .consent{font-size:14px;color:#a9a597;line-height:1.45}
+  form.reg .consent a{color:#cfcbbd}
+  form.reg .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  form.reg button[disabled]{opacity:.6;cursor:wait}
+  .status{grid-column:1/-1;font-size:16px;min-height:1.5em;margin:0}
+  .status.err{color:#f19a7c}
+  .thanks{display:none;border:1px solid #3a3a37;padding:36px;border-radius:4px}
+  .thanks h3{font:500 30px/1.15 Syne,sans-serif;margin:0 0 12px}
+  .thanks p{margin:0;color:#cfcbbd;font-size:17px}
+  @media(max-width:600px){form.reg{grid-template-columns:1fr}}
+
+
+  .cta.big{padding:18px 30px;font-size:18px}
+  
+  .sticky-cta{position:fixed;left:50%;bottom:24px;transform:translate(-50%,220%);z-index:50;box-shadow:0 12px 32px rgba(0,0,0,.25);transition:transform .35s ease;white-space:nowrap}
+  .sticky-cta.show{transform:translate(-50%,0)}
+  .sticky-cta.show:hover{transform:translate(-50%,-2px)}
+  .signup{padding-bottom:clamp(80px,10vw,140px)}
+  .signup .formcard{background:#242422;border:1px solid #34342f;padding:clamp(24px,3.5vw,48px);border-radius:6px}
+  form.reg .cta{width:100%;justify-content:center;padding:20px;font-size:19px}
+</style>
+</head>
+<body>
+
+<div class="dark">
+  <div class="wrap">
+    <header class="site">
+      <span class="logo" role="img" aria-label="Adapt"><svg data-testid="adapt-a-logo" aria-label="Adapt A logo" viewBox="0 0 22 23" xmlns="http://www.w3.org/2000/svg" ><path d="M0 19.8222L1.21111 22.2489H3.73778L5.91333 17.3644H15.06L17.5089 22.2578H20.0022L21.2267 19.8044L11.3289 0H8.80667L0 19.8222ZM16.4844 14.6511H7.12222L7.84667 13.0222H15.6689L9.42889 0.54H10.9889L20.4867 19.5333H18.9267L16.4844 14.6489V14.6511ZM8.08222 12.4822L10.22 7.68444L12.6178 12.4822H8.08222ZM9.11333 4.25333L1.37111 21.36L0.593333 19.8067L8.99778 0.9L14.7867 12.48H13.2267L9.11333 4.25111V4.25333ZM6.28444 15.1956H15.8733L15.06 16.8244H5.56L3.38444 21.7089H1.81111L9.13778 5.51556L9.90444 7.05778L6.28444 15.1978V15.1956ZM15.5311 17.0933L16.3133 15.5333L18.4489 19.8067L17.6667 21.3711L15.5311 17.0933ZM19.6644 21.7156H18.1044L18.9178 20.0867H20.4778L19.6644 21.7156Z" fill="currentColor"></path></svg></span>
+    </header>
+
+
+    <div class="banner">
+      <div class="title">
+        <span>Online seminar</span>
+        <h1 class="display">Digital budget&shy;formidling</h1>
+        <p>Fra tunge PDF'er til gennemskuelige digitale universer. Se hvordan Adapt og Boligkontoret Danmark har gjort boligbudgetter letforståelige for beboere og afdelingsbestyrelser.</p>
+      </div>
+      <div class="shot"><img src="images/portal-intro.jpg" alt="Skærmbillede fra budgetportalen"></div>
+    </div>
+
+    <div class="dateband">
+      <h2 class="display">1. december 2027<br>kl. 10:00–11:30</h2>
+      <div>
+        <ul class="meta">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Onsdag 1. december 2027</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Kl. 10:00–11:30</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Online – link sendes efter tilmelding</li>
+        </ul>
+        <a class="cta" href="#tilmelding">Tilmeld dig <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap two">
+    <h2 class="display">Om arrangementet</h2>
+    <div class="body">
+      <p class="lead">At gøre komplekse boligbudgetter letforståelige for både beboere og afdelingsbestyrelser er en klassisk udfordring i den almene sektor. Sammen med Boligkontoret Danmark (BDK) har vi udviklet en digital budgetportal, der præsenterer økonomi, huslejeændringer og vedligeholdelsesplaner i øjenhøjde – automatisk opdateret via fagsystemer som EG Bolig og NTI.</p>
+      <p>På dette online seminar vil vi først fortælle lidt om baggrunden for projektet og de indledende overvejelser. Derefter viser vi løsningen frem i praksis. Her vil det være muligt at spørge ind til både de tekniske og brugerfokuserede beslutninger bag løsningen – da vi har selskab af Adapt UX'er Katrine Havsager samt seniorudvikler Tom Helmer.</p>
+      <div class="people">
+        <div class="person"><b>Katrine Havsager</b><span>UX designer, Adapt</span></div>
+        <div class="person"><b>Tom Helmer</b><span>Seniorudvikler, Adapt</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="block">
+  <div class="wrap two">
+    <h2 class="display">Programmet</h2>
+    <div class="body">
+      <ol class="steps">
+        <li><div><b>Velkommen og intro.</b>
+          <ul><li>Kort rammesætning af arrangementet v. Adapt.</li></ul></div></li>
+        <li><div><b>Hvorfor og hvordan?</b>
+          <ul><li>Vi fortæller om udgangspunktet, og hvad vi lærte af de indledende overvejelser og brugerundersøgelser.</li>
+          <li>Et hurtigt kig på arkitektur og dataintegrationer (bl.a. EG Bolig og NTI).</li></ul></div></li>
+        <li><div><b>Live demo af budgetportalen.</b>
+          <ul><li>Vi viser, hvad vi rent faktisk har lavet – fra nøgletal og huslejeinformation til 10-års vedligeholdelsesplaner og administration.</li></ul></div></li>
+        <li><div><b>Spørgsmål og dialog.</b>
+          <ul><li>Der er plads til at stille spørgsmål til UX og udvikling samt tage en uformel snak for dem, der har lyst.</li></ul></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap two">
+    <h2 class="display">Hvem kan deltage?</h2>
+    <div class="body">
+      <p class="lead">Seminaret er til for dig, der arbejder med IT, digitalisering, økonomi eller formidling i et alment boligselskab eller som samarbejdspartner, og som er nysgerrig på at se, hvordan andre tackler de digitale udfordringer i branchen.</p>
+      <ul class="diamonds">
+        <li>Arbejder med IT eller digitalisering i et alment boligselskab</li>
+        <li>Har ansvar for økonomi, budgetter eller formidling til beboere og bestyrelser</li>
+        <li>Er samarbejdspartner til den almene sektor</li>
+      </ul>
+      <span class="free">Det er gratis og uforpligtende at deltage</span>
+      <div style="margin-top:32px"><a class="cta big" href="#tilmelding">Sikr din plads <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block signup" id="tilmelding">
+  <div class="wrap two">
+    <div>
+      <h2 class="display">Tilmeld dig seminaret</h2>
+      <div class="when"><strong>1. december 2027</strong><br>Kl. 10:00–11:30<br>Online – du modtager link på mail</div>
+    </div>
+    <div class="formcard">
+      <form class="reg" id="reg" novalidate>
+        <div><label for="f-name">Navn *</label><input id="f-name" name="navn" autocomplete="name" required></div>
+        <div><label for="f-title">Titel *</label><input id="f-title" name="titel" autocomplete="organization-title" required></div>
+        <div><label for="f-company">Virksomhed *</label><input id="f-company" name="virksomhed" autocomplete="organization" required></div>
+        <div><label for="f-email">E-mail *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="consent full">Vi bruger dine oplysninger til at sende praktisk information og link til seminaret. Læs vores <a href="https://adaptagency.com/da/privatlivspolitik">privatlivspolitik</a>.</p>
+        <div class="full"><button class="cta" type="submit">Tilmeld mig <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+      <div class="thanks" id="thanks" tabindex="-1">
+        <h3>Tak for din tilmelding!</h3>
+        <p>Vi glæder os til at se dig online 1. december 2027 kl. 10:00. Du modtager link og praktisk info på mail inden seminaret.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="sticky-cta cta big" id="sticky" href="#tilmelding">Tilmeld dig – 1. dec. 2027 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+
+<script>
+  // Indsæt URL'en fra din Google Apps Script-deployment (slutter på /exec)
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/INDSÆT_DEPLOYMENT_ID/exec";
+
+  // Sticky CTA: vises efter hero, skjules når formularen er synlig
+  const sticky = document.getElementById('sticky');
+  const heroCta = document.querySelector('.dateband .cta');
+  const signup = document.getElementById('tilmelding');
+  let heroVisible = true, formVisible = false;
+  const upd = () => sticky.classList.toggle('show', !heroVisible && !formVisible);
+  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting || e.boundingClientRect.top > 0; upd(); }).observe(heroCta);
+  new IntersectionObserver(([e]) => { formVisible = e.isIntersecting; upd(); }, {threshold: .15}).observe(signup);
+
+  const form = document.getElementById('reg');
+  const statusEl = document.getElementById('status');
+  const thanks = document.getElementById('thanks');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.className = 'status'; statusEl.textContent = '';
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Udfyld venligst alle felter med en gyldig e-mail.';
+      return;
+    }
+    const data = new URLSearchParams(new FormData(form));
+    data.append('kilde', location.href);
+    const btn = form.querySelector('button');
+    btn.disabled = true; statusEl.textContent = 'Sender…';
+    try {
+      // no-cors: Apps Script svarer med redirect, som browseren ikke må læse – data lander stadig i arket
+      await fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data });
+      form.style.display = 'none';
+      thanks.style.display = 'block';
+      thanks.focus();
+    } catch (err) {
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Noget gik galt. Prøv igen, eller skriv til hello@adaptagency.com.';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
